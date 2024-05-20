@@ -23,36 +23,42 @@
       }
     </style>
     <script>
-// Set the date of birth
-const dob = new Date('2006-11-10');
+      // Set the date of birth
+      const dob = new Date('2006-11-10');
 
-function calculateAge() {
-  const now = new Date();
-  const diff = now.getTime() - dob.getTime();
-  const ageDate = new Date(diff);
-  const years = ageDate.getUTCFullYear() - 1970;
-  const months = ageDate.getUTCMonth();
-  const days = ageDate.getUTCDate() - 1;
-  const hours = ageDate.getUTCHours();
-  const minutes = ageDate.getUTCMinutes();
-  const seconds = ageDate.getUTCSeconds();
-  return { years, months, days, hours, minutes, seconds };
-}
+      function calculateAge() {
+        const now = new Date();
+        const diff = now.getTime() - dob.getTime();
+        const ageDate = new Date(diff);
+        const years = ageDate.getUTCFullYear() - 1970;
+        const months = ageDate.getUTCMonth();
+        const days = ageDate.getUTCDate() - 1;
+        const hours = ageDate.getUTCHours();
+        const minutes = ageDate.getUTCMinutes();
+        const seconds = ageDate.getUTCSeconds();
+        return {
+          years,
+          months,
+          days,
+          hours,
+          minutes,
+          seconds
+        };
+      }
 
-function toBanglaDigits(number) {
-  const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-  return number.toString().split('').map(digit => banglaDigits[digit]).join('');
-}
+      function toBanglaDigits(number) {
+        const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        return number.toString().split('').map(digit => banglaDigits[digit]).join('');
+      }
 
-function displayCountdown() {
-  const age = calculateAge();
-  const countdownElement = document.getElementById('countdown');
-  countdownElement.textContent = ' ${toBanglaDigits(age.years)} বছর, ${toBanglaDigits(age.months)} মাস, ${toBanglaDigits(age.days)} দিন, ${toBanglaDigits(age.hours)} ঘন্টা, ${toBanglaDigits(age.minutes)} মিনিট, এবং ${toBanglaDigits(age.seconds)} সেকেন্ড।`;
-}
-
-displayCountdown();
-setInterval(displayCountdown, 1000);
-</script>
+      function displayCountdown() {
+        const age = calculateAge();
+        const countdownElement = document.getElementById('countdown');
+        countdownElement.textContent = ' ${toBanglaDigits(age.years)} বছর, ${toBanglaDigits(age.months)} মাস, ${toBanglaDigits(age.days)} দিন, ${toBanglaDigits(age.hours)} ঘন্টা, ${toBanglaDigits(age.minutes)} মিনিট, এবং ${toBanglaDigits(age.seconds)} সেকেন্ড।`;
+      }
+      displayCountdown();
+      setInterval(displayCountdown, 1000);
+    </script>
   </head>
   <body>
     <div style="border-radius: 15px; background: #dcf0fa; padding: 20px; width: 300px; height: 600px; text-align: center; justify-content: center; color: #00008B; font-size: 20px; display: block; margin-left: auto; margin-right: auto;">

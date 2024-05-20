@@ -23,7 +23,7 @@
       }
     </style>
     <script>
-	    // Set the date of birth
+	// Set the date of birth
       const dob = new Date('January 2, 1999');
 
       function updateCountdown() {
@@ -31,12 +31,18 @@
         const now = new Date();
         // Calculate the difference in milliseconds
         const diff = now - dob;
-        // Convert the difference to years
+        // Convert the difference to years, hours, minutes, and seconds
         const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-        // Convert years to Bengali numerals
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        // Convert numbers to Bengali numerals
         const bengaliYears = convertToBengaliNumerals(years);
+        const bengaliHours = convertToBengaliNumerals(hours);
+        const bengaliMinutes = convertToBengaliNumerals(minutes);
+        const bengaliSeconds = convertToBengaliNumerals(seconds);
         // Display the countdown
-        document.getElementById('countdown').innerText = `আপনি ${bengaliYears} বছর বয়সী।`;
+        document.getElementById('countdown').innerHTML = `আপনি ${bengaliYears} বছর, ${bengaliHours} ঘণ্টা, ${bengaliMinutes} মিনিট, এবং ${bengaliSeconds} সেকেন্ড বয়সী।`;
       }
       // Function to convert numbers to Bengali numerals
       function convertToBengaliNumerals(number) {

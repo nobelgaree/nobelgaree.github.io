@@ -24,9 +24,8 @@
     </style>
     <script>
 // Set the date of birth
-const dob = new Date('1988-05-06');
+const dob = new Date('2006-11-10');
 
-// Function to calculate age countdown
 function calculateAge() {
   const now = new Date();
   const diff = now.getTime() - dob.getTime();
@@ -40,29 +39,26 @@ function calculateAge() {
   return { years, months, days, hours, minutes, seconds };
 }
 
-// Function to convert number to Bengali digits
 function toBanglaDigits(number) {
   const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
   return number.toString().split('').map(digit => banglaDigits[digit]).join('');
 }
 
-// Function to display age countdown
 function displayCountdown() {
   const age = calculateAge();
   const countdownElement = document.getElementById('countdown');
-  countdownElement.textContent = `আপনি ${toBanglaDigits(age.years)} বছর, ${toBanglaDigits(age.months)} মাস, ${toBanglaDigits(age.days)} দিন, ${toBanglaDigits(age.hours)} ঘন্টা, ${toBanglaDigits(age.minutes)} মিনিট, এবং ${toBanglaDigits(age.seconds)} সেকেন্ড পুরানো হয়েছেন।`;
+  countdownElement.textContent = ' ${toBanglaDigits(age.years)} বছর, ${toBanglaDigits(age.months)} মাস, ${toBanglaDigits(age.days)} দিন, ${toBanglaDigits(age.hours)} ঘন্টা, ${toBanglaDigits(age.minutes)} মিনিট, এবং ${toBanglaDigits(age.seconds)} সেকেন্ড।`;
 }
 
-// Display age countdown on page load
 displayCountdown();
 
-// Update age countdown every second
 setInterval(displayCountdown, 1000);
-</script>  </head>
+</script>
+  </head>
   <body>
     <div style="border-radius: 15px; background: #dcf0fa; padding: 20px; width: 300px; height: 600px; text-align: center; justify-content: center; color: #00008B; font-size: 20px; display: block; margin-left: auto; margin-right: auto;">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Seal_of_University_of_California%2C_Berkeley.svg" style="width:150px"></img>
-      <h1>আপনার বয়স</h1>
+      <h1>আপনার বয়স:</h1>
       <a style="font-weight: 500; font-size: 30px;" id="countdown"></a>
     </div>
   </body>

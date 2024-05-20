@@ -33,7 +33,7 @@
           var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-          countdownElement.innerHTML = toBanglaDigits(days) + " দিন " + toBanglaDigits(hours) + " ঘন্টা " + toBanglaDigits(minutes) + " মিনিট " + toBanglaDigits(seconds) + " সেকেন্ড বাকি";
+          countdownElement.innerHTML = " আর মাত্র " + toBanglaDigits(days) + " দিন " + toBanglaDigits(hours) + " ঘন্টা " + toBanglaDigits(minutes) + " মিনিট " + toBanglaDigits(seconds) + " সেকেন্ড বাকি";
         }
       }
 

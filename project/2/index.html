@@ -23,26 +23,51 @@
       }
     </style>
     <script>
-	// Set the date of birth
-      const dob = new Date('November 10, 2006');
+	     // Set the date of birth
+      const dob = new Date('January 2, 1999');
 
       function updateCountdown() {
         // Get the current date and time
         const now = new Date();
         // Calculate the difference in milliseconds
         const diff = now - dob;
-        // Convert the difference to years, hours, minutes, and seconds
-        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        // Convert the difference to years, months, days, hours, minutes, and seconds
+        const years = now.getFullYear() - dob.getFullYear();
+        const months = now.getMonth() - dob.getMonth();
+        const days = now.getDate() - dob.getDate();
+        const hours = now.getHours() - dob.getHours();
+        const minutes = now.getMinutes() - dob.getMinutes();
+        const seconds = now.getSeconds() - dob.getSeconds();
+        // Handle cases where months, days, hours, minutes, or seconds are negative
+        if (months < 0 || (months === 0 && days < 0)) {
+          years--;
+          months += 12;
+        }
+        if (days < 0) {
+          months--;
+          days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+        }
+        if (hours < 0) {
+          days--;
+          hours += 24;
+        }
+        if (minutes < 0) {
+          hours--;
+          minutes += 60;
+        }
+        if (seconds < 0) {
+          minutes--;
+          seconds += 60;
+        }
         // Convert numbers to Bengali numerals
         const bengaliYears = convertToBengaliNumerals(years);
+        const bengaliMonths = convertToBengaliNumerals(months);
+        const bengaliDays = convertToBengaliNumerals(days);
         const bengaliHours = convertToBengaliNumerals(hours);
         const bengaliMinutes = convertToBengaliNumerals(minutes);
         const bengaliSeconds = convertToBengaliNumerals(seconds);
         // Display the countdown
-        document.getElementById('countdown').innerHTML = `${bengaliYears} বছর, ${bengaliHours} ঘণ্টা, ${bengaliMinutes} মিনিট, এবং ${bengaliSeconds} সেকেন্ড।`;
+        document.getElementById('countdown').innerHTML = `আপনি ${bengaliYears} বছর, ${bengaliMonths} মাস, ${bengaliDays} দিন, ${bengaliHours} ঘণ্টা, ${bengaliMinutes} মিনিট, এবং ${bengaliSeconds} সেকেন্ড বয়সী।`;
       }
       // Function to convert numbers to Bengali numerals
       function convertToBengaliNumerals(number) {

@@ -23,23 +23,36 @@
       }
     </style>
     <script>
-      // Set the date of birth
-	const dob = new Date('January 2, 1999');
+	    // Set the date of birth
+      const dob = new Date('January 2, 1999');
 
-	function updateCountdown() {
-		// Get the current date and time
-		const now = new Date();
-		// Calculate the difference in milliseconds
-		const diff = now - dob;
-		// Convert the difference to years
-		const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-		// Display the countdown
-		document.getElementById('countdown').innerText = `You are ${years} years old.`;
-	}
-	// Update the countdown every second
-	setInterval(updateCountdown, 1000);
-	// Initial call to display the countdown immediately
-	updateCountdown();
+      function updateCountdown() {
+        // Get the current date and time
+        const now = new Date();
+        // Calculate the difference in milliseconds
+        const diff = now - dob;
+        // Convert the difference to years
+        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+        // Convert years to Bengali numerals
+        const bengaliYears = convertToBengaliNumerals(years);
+        // Display the countdown
+        document.getElementById('countdown').innerText = `আপনি ${bengaliYears} বছর বয়সী।`;
+      }
+      // Function to convert numbers to Bengali numerals
+      function convertToBengaliNumerals(number) {
+        const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        const numStr = number.toString();
+        let bengaliStr = '';
+        for (let i = 0; i < numStr.length; i++) {
+          const digit = parseInt(numStr[i]);
+          bengaliStr += bengaliDigits[digit];
+        }
+        return bengaliStr;
+      }
+      // Update the countdown every second
+      setInterval(updateCountdown, 1000);
+      // Initial call to display the countdown immediately
+      updateCountdown();
     </script>
   </head>
   <body>

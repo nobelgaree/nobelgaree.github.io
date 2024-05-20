@@ -24,7 +24,7 @@
     </style>
     <script>
 	     // Set the date of birth
-      const dob = new Date('January 2, 1999');
+      const dob = new Date('November 10, 2006');
 
       function updateCountdown() {
         // Get the current date and time
@@ -67,7 +67,7 @@
         const bengaliMinutes = convertToBengaliNumerals(minutes);
         const bengaliSeconds = convertToBengaliNumerals(seconds);
         // Display the countdown
-        document.getElementById('countdown').innerHTML = `আপনি ${bengaliYears} বছর, ${bengaliMonths} মাস, ${bengaliDays} দিন, ${bengaliHours} ঘণ্টা, ${bengaliMinutes} মিনিট, এবং ${bengaliSeconds} সেকেন্ড বয়সী।`;
+        document.getElementById('countdown').innerHTML = `${bengaliYears} বছর, ${bengaliMonths} মাস, ${bengaliDays} দিন, ${bengaliHours} ঘণ্টা, ${bengaliMinutes} মিনিট, এবং ${bengaliSeconds} সেকেন্ড।`;
       }
       // Function to convert numbers to Bengali numerals
       function convertToBengaliNumerals(number) {

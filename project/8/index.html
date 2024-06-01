@@ -78,6 +78,49 @@
     }
   }
 </style>
+<script>
+      function getBanglaDate() {
+        var date = new Date();
+        var options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        };
+        var formattedDate = date.toLocaleDateString('bn-BD', options);
+        return formattedDate;
+      }
+
+      function toBanglaNumber(number) {
+        var banglaNumbers = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        var banglaNumberStr = '';
+        number.toString().split('').forEach(digit => {
+          banglaNumberStr += banglaNumbers[digit];
+        });
+        return banglaNumberStr;
+      }
+
+      function getBanglaTime() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var meridian = hours >= 12 ? 'অপরাহ্ণ' : 'পূর্বাহ্ণ';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Convert midnight (0) to 12
+        var formattedTime = `${toBanglaNumber(hours)}:${toBanglaNumber(minutes)}:${toBanglaNumber(seconds)} ${meridian}`;
+        return formattedTime;
+      }
+
+      function updateDateTime() {
+        document.getElementById("banglaDate").innerText = getBanglaDate();
+        document.getElementById("banglaTime").innerText = getBanglaTime();
+      }
+      // Update date and time every second
+      setInterval(updateDateTime, 1000);
+      // Initial update
+      updateDateTime();
+    </script>
 </head>
 <body>
 <div class="container">

@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Animation</title>
+<style>
+  @font-face {
+      font-family: "varendrafont";
+      src: url('https://nobelgaree.github.io/project/7/varendra-regular-v2.1.woff2') format('woff2');
+      font-style: normal;
+    }
+  body {
+    font-family: "varendrafont";
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    text-align: center;
+  }
+
+  .animated-text {
+    font-size: 40px;
+    font-weight: 900;
+    color: #000042;
+    overflow: hidden; 
+    white-space: nowrap;
+    animation: animate 5s;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="animated-text">হাজী মুহাম্মদ মহসিন সরকারি উচ্চ বিদ্যালয়</h1>
+</div>
+</body>
+</html>
 

@@ -59,6 +59,29 @@
 
     .navbar-toggler:focus {
       box-shadow: none;
+    #popup {
+      p {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+    }
   </style>
   <script></script>
   <body>
@@ -83,7 +106,7 @@
     <main>
       <section id="cape-town">
         <img class="d-block mx-auto mb-4" style="display: block; width:150px; height: auto; margin-top: 10px; margin-bottom: 10px" src="https://upload.wikimedia.org/wikipedia/bn/8/84/হাজী_মুহাম্মদ_মহসিন_সরকারি_উচ্চ_বিদ্যালয়_এর_লোগো.svg"></img>
-        <h1 style="text-align: center; margin-top: 10px; margin-bottom: 10px">হাজী মুহাম্মদ মহসিন সরকারি উচ্চ বিদ্যালয়</h1>
+        <h1 id="popup" style="text-align: center; margin-top: 10px; margin-bottom: 10px">হাজী মুহাম্মদ মহসিন সরকারি উচ্চ বিদ্যালয়</h1>
       </section>
       <section id="nairobi">
        <h2 style="text-align: center; margin-top: 10px; margin-bottom: 10px">ইতিহাস</h2>

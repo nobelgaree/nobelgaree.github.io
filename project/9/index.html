@@ -93,15 +93,13 @@
     h6 {
       color: #ffffff;
     }
-    .navbar-collapse {
-  transition: height 0.3s ease;
-  height: 0;
-  overflow: hidden;
-}
-
-.navbar-collapse.show {
-  height: auto;
-}
+    .navbar {
+      transform: translateX(-100%);
+      transition: transform 0.5s ease-in-out;
+    }
+    .navbar.show {
+      transform: translateX(0);
+    }
 
 
     .button-30 {

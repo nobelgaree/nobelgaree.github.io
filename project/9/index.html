@@ -125,16 +125,16 @@
       justify-content: center;
     }
 
-    .button-30:focus {
+    #button-30:focus {
       box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     }
 
-    .button-30:hover {
+    #button-30:hover {
       box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
       transform: translateY(-2px);
     }
 
-    .button-30:active {
+    #button-30:active {
       box-shadow: #D6D6E7 0 3px 7px inset;
       transform: translateY(2px);
     }
@@ -200,7 +200,13 @@
       }
     }
   </style>
-  <script></script>
+  <script>
+    // Function to redirect to a specified URL
+        function redirectToUrl() {
+            // Change the URL to the one you want to redirect to
+            window.location.href = "https://hmmghs24.github.io/registration";
+        }
+  </script>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
       <div class="container-fluid">
@@ -243,7 +249,7 @@
         <p id="fox" class="text-center text p" style="display: block; font-size: 16px; line-height: 24px; margin: 40px 0; text-align: center;">হাজী মুহাম্মদ মহসিন সরকারি উচ্চ বিদ্যালয়ের ২০২৪ ব্যাচের প্রতিনিধিত্বকারী সংগঠন বন্ধুদল। বন্ধুদল উক্ত ব্যাচের শিক্ষার্থীদের মধ্যে যোগাযোগ ও ঐক্য বজায় রাখতে কাজ করছে। হাজী মুহাম্মদ মহসিন সরকারি উচ্চ বিদ্যালয়ের পক্ষে অবকাঠামোগত উন্নয়ন ও প্রচারকার্যে বন্ধুদলের সদস্যরা সহযোগিতা করছেন। বন্ধুদের মধ্যে ঐক্য ও সুসম্পর্ক বজায় রাখা বন্ধুদল এর মূল উদ্দেশ্য।</p>
         <h2 class="slide-in-down" style="text-align: center; margin-top: 20px; margin-bottom: 10px">ভর্তির আবেদন</h2>
         <a class="d-block mx-auto mb-4" href="#admit">
-          <button class="button-30" role="button">আবেদন করুন</button>
+          <button class="d-block mx-auto mb-4" onclick="redirectToUrl()" id="button-30" role="button">আবেদন করুন</button>
         </a>
       </section>
     </main>
